@@ -1,15 +1,15 @@
 :root {
-  --blue: #1f367f;
-  --blue-dark: #142455;
+  --blue: #032d67;
+  --blue-dark: #02234f;
   --yellow: #ffed00;
   --ink: #17191f;
   --muted: #62666f;
-  --paper: #fbfaf7;
-  --soft: #efeee9;
+  --paper: #ffffff;
+  --soft: #f3f5f7;
   --grey: #a2a3a5;
   --white: #ffffff;
   --line: rgba(23, 25, 31, 0.16);
-  --serif: Georgia, "Times New Roman", serif;
+  --serif: Arial, Helvetica, sans-serif;
   --sans: Arial, Helvetica, sans-serif;
   --page: min(1440px, calc(100% - 64px));
 }
@@ -85,10 +85,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 84px;
+  height: 90px;
   padding: 0 max(32px, calc((100vw - 1440px) / 2));
-  background: rgba(251, 250, 247, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid transparent;
+  box-shadow: 0 3px 12px rgba(3, 45, 103, 0.08);
   backdrop-filter: blur(18px);
   transition: height 180ms ease, border-color 180ms ease;
 }
@@ -103,19 +104,23 @@ img {
   align-items: stretch;
   color: var(--blue);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  gap: 18px;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
 .brand-name {
-  padding: 9px 12px 8px 0;
-  font-size: 19px;
+  align-self: center;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 800;
 }
 
 .brand-party {
-  width: 62px;
-  height: 36px;
-  object-fit: cover;
+  order: -1;
+  width: 94px;
+  height: 37px;
+  object-fit: contain;
 }
 
 .main-navigation {
@@ -135,9 +140,10 @@ img {
 }
 
 .main-navigation .nav-cta {
-  padding: 10px 15px;
-  color: var(--white);
-  background: var(--blue);
+  padding: 11px 18px;
+  color: var(--blue);
+  background: var(--yellow);
+  border-radius: 4px;
 }
 
 .menu-button {
@@ -152,7 +158,7 @@ img {
   min-height: 760px;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 132px 32px 48px;
+  padding: 145px 32px 62px;
 }
 
 .hero-copy {
@@ -182,18 +188,19 @@ blockquote {
   font-family: var(--serif);
   letter-spacing: -0.045em;
   line-height: 0.98;
+  font-weight: 900;
 }
 
 h1 {
   max-width: 730px;
   margin-bottom: 28px;
-  font-size: clamp(54px, 6.2vw, 98px);
+  font-size: clamp(52px, 5.7vw, 88px);
   color: var(--blue);
 }
 
 h1 span {
   display: block;
-  color: var(--ink);
+  color: var(--blue);
 }
 
 .hero-intro {
@@ -219,6 +226,7 @@ h1 span {
   padding: 12px 22px;
   font-size: 14px;
   font-weight: 700;
+  border-radius: 4px;
   transition: transform 160ms ease, background 160ms ease;
 }
 
@@ -257,6 +265,7 @@ h1 span {
   width: 100%;
   overflow: hidden;
   background: var(--grey);
+  border-radius: 20px;
 }
 
 .hero-image-wrap img {
@@ -268,32 +277,35 @@ h1 span {
 
 .hero-sticker {
   position: absolute;
-  right: clamp(16px, 3vw, 42px);
-  bottom: -24px;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: end;
-  width: 172px;
-  padding: 18px 20px;
+  right: clamp(20px, 3vw, 38px);
+  bottom: -28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 158px;
+  aspect-ratio: 1;
+  padding: 18px;
   color: var(--blue);
   background: var(--yellow);
-  box-shadow: 0 18px 50px rgba(18, 35, 80, 0.16);
-  line-height: 1;
-  transform: rotate(-2deg);
+  border-radius: 50%;
+  box-shadow: 0 18px 45px rgba(3, 45, 103, 0.2);
+  line-height: 0.92;
+  text-align: center;
 }
 
 .hero-sticker span {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .hero-sticker strong {
-  grid-row: 1 / 3;
-  grid-column: 2;
-  font-family: var(--serif);
-  font-size: 62px;
-  letter-spacing: -0.08em;
+  margin: 3px 0 1px;
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: -0.09em;
 }
 
 .section-pad {
@@ -316,6 +328,7 @@ h1 span {
 
 .statement em {
   color: var(--ink);
+  font-style: normal;
   font-weight: inherit;
   text-decoration: underline;
   text-decoration-color: var(--yellow);
@@ -338,7 +351,7 @@ h1 span {
 
 .profile-image::before {
   position: absolute;
-  inset: -18px 18px 18px -18px;
+  inset: -14px 14px 14px -14px;
   z-index: -1;
   content: "";
   background: var(--blue);
@@ -349,6 +362,7 @@ h1 span {
   max-height: 760px;
   object-fit: cover;
   object-position: 50% 22%;
+  border-radius: 18px;
 }
 
 .image-label {
@@ -361,6 +375,7 @@ h1 span {
   background: var(--yellow);
   font-size: 12px;
   font-weight: 700;
+  border-radius: 4px;
   line-height: 1.3;
   text-transform: uppercase;
 }
@@ -425,6 +440,7 @@ h2 {
   background: rgba(31, 54, 127, 0.08);
   font-size: 12px;
   font-weight: 600;
+  border-radius: 999px;
 }
 
 .themes {
@@ -599,6 +615,7 @@ h2 {
   padding: 15px 18px;
   border: 1px solid var(--line);
   background: var(--white);
+  border-radius: 14px;
   box-shadow: 0 16px 45px rgba(31, 54, 127, 0.08);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
@@ -819,6 +836,7 @@ h2 {
   padding: 22px 25px;
   border-left: 5px solid var(--yellow);
   background: var(--white);
+  border-radius: 0 10px 10px 0;
   font-style: normal;
 }
 
@@ -863,16 +881,26 @@ h2 {
     --page: min(100% - 44px, 820px);
   }
 
+  .site-header {
+    backdrop-filter: none;
+  }
+
   .main-navigation {
     position: fixed;
-    inset: 70px 0 0;
-    z-index: -1;
+    top: 70px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    z-index: 30;
+    height: calc(100dvh - 70px);
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
     gap: 0;
     padding: 30px;
     background: var(--paper);
+    box-shadow: 0 18px 40px rgba(3, 45, 103, 0.12);
+    overflow-y: auto;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-15px);
@@ -891,11 +919,14 @@ h2 {
     color: var(--blue);
     background: none;
     border-bottom: 1px solid var(--line);
-    font-family: var(--serif);
+    font-family: var(--sans);
+    font-weight: 900;
     font-size: 30px;
   }
 
   .menu-button {
+    position: relative;
+    z-index: 31;
     display: grid;
     gap: 7px;
     width: 44px;
@@ -1016,7 +1047,8 @@ h2 {
 
   .hero-sticker {
     right: 18px;
-    bottom: -20px;
+    bottom: -30px;
+    width: 138px;
   }
 
   .section-pad {
